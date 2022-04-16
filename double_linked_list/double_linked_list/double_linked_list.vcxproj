@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="linked_list.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="ProductList.cpp" />
     <ClCompile Include="ProductNode.cpp" />
