@@ -12,6 +12,8 @@ int main()
     a.addTail(Product("1234", "sadsdawq", 5, 6, 2.3));
     
     a.printList();
+    cout << endl << endl;
+    a.search("12")->data.toString();
     a.remove("123");
     
     a.addHead(Product("1236", "sadsdawq", 5, 6, 2.3));

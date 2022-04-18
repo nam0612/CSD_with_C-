@@ -5,14 +5,14 @@ public:
 	ProductNode* head, *tail;
 
 	ProductList() {
-		head = NULL;
-		tail = NULL;
+		head = nullptr;
+		tail = nullptr;
 	}
 
 	void addTail(Product data) {
 		ProductNode* newNode = new ProductNode(data);
 
-		if (head == NULL) {
+		if (head == nullptr) {
 			head = newNode;
 			tail = newNode;
 		}
@@ -26,7 +26,7 @@ public:
 	void addHead(Product data) {
 		ProductNode* newNode = new ProductNode(data);
 
-		if (head == NULL) {
+		if (head == nullptr) {
 			head = newNode;
 			tail = newNode;
 		}
@@ -42,22 +42,23 @@ public:
 		while (seek != NULL) {
 			if (seek->data.getPcode()._Equal(pcode))
 				return seek;
+			seek = seek->next;
 		}
 		return NULL;
 	}
 
 	void remove(string pcode) {
 		ProductNode* seek = head;
-		if (head == NULL)
+		if (head == nullptr)
 			cout << "List empty";
 		else {
-			while (seek != NULL){
+			while (seek != nullptr){
 				if (seek->data.getPcode()._Equal(pcode)) {
-					if (seek->next == NULL) {
+					if (seek->next == nullptr) {
 						tail = tail->prev;
 						tail->next = nullptr;
 					}
-					else if(seek->prev == NULL)
+					else if(seek->prev == nullptr)
 					{
 						head = head->next;
 						head->prev = nullptr;
@@ -74,7 +75,7 @@ public:
 
 	void printList() {
 		ProductNode* seek = head;
-		while (seek != NULL) {
+		while (seek != nullptr) {
 			seek->data.toString();
 			seek = seek->next;
 		}
